@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 1rem;
+    text-align: center;
+}
+
+.box {
+    padding: 1rem;
+    border: 1px solid #000;
+}
+
+.page {
+    display: grid;
+    min-height: calc(100vh - 2rem);
+    grid-template-areas: 
+        'header   header  header  header'
+        'nav      nav     nav     nav'
+        'content  content content aside'
+        'footer   footer  footer  footer';
+    grid-template-rows: 3rem 3rem 1fr 3rem;
+    gap: 0.5rem 1rem;
+}
+
+.page .page__header {
+    grid-area: header;
+}
+
+.page .page__navigation {
+    grid-area: nav;
+}
+
+.page .page__main {
+    grid-area: content;
+}
+
+.page .page__aside {
+    grid-area: aside;
+}
+
+.page .page__footer {
+    grid-area: footer;
+}
