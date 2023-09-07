@@ -1,4 +1,5 @@
-const isObject = (obj: object | null) => obj && typeof obj === 'object';
+const isObject = (obj: object | null) =>
+  obj && Object.prototype.toString.call(obj) === '[object Object]';
 
 function deepEqual(expected: object, given: object): boolean {
   const expectedKeys = Object.keys(expected);

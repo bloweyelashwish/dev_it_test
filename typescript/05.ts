@@ -10,7 +10,7 @@ const obj = {
 
 function objectToArray(object: Record<string, any>) {
   return Object.entries(object).map(([key, value]) => {
-    if (typeof value === 'object') {
+    if (Object.prototype.toString.call(value) === '[object Object]') {
       return [key, objectToArray(value)];
     }
 
